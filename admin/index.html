@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Universities</title>
+
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css"/>
+    
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-new-router/dist/router.es5.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-messages.min.js"></script>
+
+ <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+						
+
+
+
+
+
+	
+	<script src="./index.js"></script>
+	<link href="./css/formstyle.css" type="text/css" rel="stylesheet">
+
+
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="ctrl1 as ctrl">
+		
+	<header><div class="name-logo"><a href="index.html"><h1>UNIVERSITIES.PK</h1>
+		</a><br>
+		<h6>TAG LINE HERE</h6>
+		</div>
+		
+		<div class="nav-list"><nav>
+
+			<ul>
+				<li><a>LOGIN<img="./down-arrow.jpg" id="img1" ></a>
+					<ul>
+						<li>
+							<div id="login-wrapper">
+								<form method="POST">
+									<p>Type Your Login Info Or Signup If You Are New</p>
+									<input type="text" name="uid" placeholder="User Name"><br>
+									<input type="password" name="pwd" placeholder="Password"><br>
+									<button type="submit" id="login-button">uhuhuy</button>
+									<a href="form.html">SIGN-UP</a>
+								</form>
+							</div>
+						</li>
+					</ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="index.html">FAQ</a></li>
+				<li><a href="index.html">CONTACT</a></li>
+			</ul>
+		</nav></div>
+		</header><br><br>
+	<div class="wrapper">
+	<div id="form-wrapper">
+	<h1 class="text-form">REGISTRATION FORM</h1><br>
+	<form>
+		<select name="degree"  value="{{degree}}" ng-init="ctrl.selected_degree = ctrl.degrees[0]"  ng-model="ctrl.selected_degree"  class="selector-input">
+			<option  ng-repeat="degree in ctrl.degrees">{{degree}}</option>
+
+
+
+			<!--<option value="b.e">B.E</option>-->
+			<!--<option value="mbbs">MBBS</option>-->
+			<!--<option value="bba">BBA</option>-->
+		
+		</select><br>
+
+		<input type="text" name="degreetitle" placeholder="Degree Title" ng-model="ctrl.degree_title" class="text-input"><br>
+		<select name="degree" ng-init="ctrl.discipline = ctrl.disciplines[0]" ng-model="ctrl.discipline"  value="{{discipline}}" class="selector-input">
+			<option ng-repeat="discipline in ctrl.disciplines">{{discipline}}</option>
+		<!--	<option value="Civil Engineering">Civil Engineering</option>
+			<option value="Electrical Engineering">Electrical Engineering</option>
+			<option value="Software Engineering">Software Engineering</option>
+		-->
+		</select><br>
+		<p id="dur-para">Duration</p><input type="text" name="Duration" ng-model="ctrl.duration" class="text-input1" placeholder="eg. 4 years">
+		<h1>Introduction</h1>
+		<div class="forced-width"><textarea class="tarea1" name="Introduction" ng-model="ctrl.intro"></textarea></div><br>
+		<h1>Eligibility Criteria</h1>
+		<div class="forced-width"><textarea class="tarea2" name="Eligibility Criteria" ng-model="ctrl.eligibility"></textarea></div><br>
+
+
+        <!--<div class="checkbox" ng-repeat="(key,group) in ctrl.groups track by $index" >
+            <input type="checkbox" ng-model="ctrl.group_selected.selected[group]" ng-true-value="'{{group.val}}'" ng-false-value="''" ng-change="ctrl.add()"  /> {{group.name}}<br>
+        </div>
+{{ctrl.group_selected.selected}}
+        {{ctrl.arr1}}
+		-->
+
+
+
+
+
+
+        <table class="tab">
+
+
+			<label ng-repeat="fruitName in ctrl.fruits">
+				<input
+						type="checkbox"
+						name="ctrl.selectedFruits[]"
+						value="{{fruitName}}"
+						ng-checked="ctrl.selection.indexOf(fruitName) > -1"
+						ng-click="ctrl.toggleSelection(fruitName)"
+				> {{fruitName}}
+			</label>
+
+			{{ctrl.selection}}
+            	<!--<tr>
+				<td class="tabdata1">Groups that can apply</td>
+				<td class="tabdata2">	
+					<input type="checkbox" value="eng">Pre-Engineering<br>
+					<input type="checkbox" value="med">Pre-Medical<br>
+					<input type="checkbox" value="com">Commerce<br>
+					<input type="checkbox" value="art">Arts<br>
+					<input type="checkbox" value="dae">DAE<br>
+					<input type="checkbox" value="dae">Computer Science
+				</td>
+
+			</tr>-->
+            <tr>
+				<td class="tabdata1">Min. % required for intermediate student</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.min_percent" type="number" name="percent" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Last year closing percentage or marks for intermediate students</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" type="number" ng-model="ctrl.last_closing_percent" name="closingint" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Number of DAE seats</td>
+				<td class="tabdata2">
+					<input class="selectortabdata" ng-model="ctrl.no_dae_seats" type="number"  >
+				</td>
+
+			</tr>
+			<tr>
+				<td class="tabdata1">Min. % for DAE students</td>
+				<td class="tabdata2">
+					<input class="selectortabdata" ng-model="ctrl.min_percent_dae" type="number"  >
+				</td>
+				
+			</tr>
+			<!--not binded-->
+			<tr>
+				<td class="tabdata1">Last year closing percentage or marks for DAE students</td>
+				<td class="tabdata2">
+					<input type="checkbox" ng-model="ctrl.closing_percentage" >Percentage<br>
+					<input type="checkbox" ng-model="ctrl.closing_mark">Marks
+					<input type="number" ng-model="ctrl.closing_value" >Closing Marks Or Percentage
+					<input class="selectortabdata" ng-model="ctrl.closing_date" type="date" name="closingdae" >
+				</td>
+				
+			</tr>	
+			
+			
+			
+		</table><br>
+		
+		<!-- Rounded switch -->
+<label class="switch">
+  <input type="checkbox" ng-model="ctrl.n0"  ng-init="ctrl.n1" ng-true-value='true' ng-false-value='false'>
+  <span class="slider round"></span>
+</label>
+
+<div ng-if="ctrl.n0 !==true">
+		<h1>Fee Structure (1st Approach)</h1>
+
+		
+
+
+		<table class="tab"  >
+			<tr>
+				<td class="tabdata1">Entry test fee</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.entry_test_fee" type="number" name="efee" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Admission fee</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.admission_fee" type="number" name="afee" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Security Deposit (Refundable)</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.security_deposit" type="number" name="sdeposit" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Min. Tuiton fee per semester</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.min_tuition_fee" type="number" name="mtfee" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Max. tuiton fee per semester (in 4 years)</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.max_tuition_fee" type="number" name="mtfee" >
+				</td>
+				
+			</tr>
+		</table>
+
+
+</div>
+	
+			
+					<div ng-if="ctrl.n0">
+		<h1>Fee Structure (2nd Approach)</h1>
+
+		<table class="tab">
+			<tr>
+				<td class="tabdata1">Entry test fee</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.entry_test_fee" type="number" name="efee" required >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Admission fee</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.admission_fee" type="number" name="afee" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Security Deposit (Refundable)</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.deposit" type="number" name="sdeposit" >
+				</td>
+				
+			</tr></table>
+			
+			<h2>Tuition Fee</h2>
+			<table class="tab">
+			<tr>
+				<td class="tabdata1">Fee per theory credit hour</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.tuition_fee" type="number" name="mtfee" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Fee per lab credit hour</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.fee_credit_hour" type="number" name="mtfee" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Total number of theory credit hours in coures plan</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.total_credit_hour_theory" type="number" name="mtfee" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Total number of lab credit hours in coures plan</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.total_credit_hour_lab" type="number" name="mtfee" >
+				</td>
+				
+			</tr>
+			<tr>
+				<td class="tabdata1">Total number semesters/years</td>
+				<td class="tabdata2">	
+					<input class="selectortabdata" ng-model="ctrl.total_semesters" type="number" name="mtfee" >
+				</td>
+				
+			</tr>
+		</table>
+		
+		</div>
+
+				<h2>Other Fee</h2>
+		<textarea class="tarea1" ng-model="ctrl.other_fee" name="Introduction"></textarea>
+		
+	</form>
+	<button ng-click="ctrl.submit_data()">Submit</button>
+	</div>
+	</div>
+	<footer><br></br><h2>COPYRIGHT&copy; 2016</h2></footer>
+
+	</div>
+</body>
+</html>

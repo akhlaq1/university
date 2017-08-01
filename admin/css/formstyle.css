@@ -1,0 +1,340 @@
+
+
+
+#img1{
+	width: 10px;
+	height: 10px;
+}
+
+
+body{
+	width:100%;
+	background-color:#fff;
+	margin:0px 0px;
+	padding:0px 0px;
+}
+.wrapper {
+	width:960px;
+	margin:50px auto 50px auto;
+	min-height:500px;
+	
+}
+/*------------------------HEADER---------------------------------------------*/
+header{
+	width:100%;
+	height:100px;
+	background-color:#3A5F0B;
+	box-shadow: 0px 5px 20px black;
+}
+.name-logo{
+	position: relative;
+	float:left;
+	color:white;
+	height: 100%;
+	left: 100px;
+	text-align: center;
+	font-family:sans-serif;
+}
+.nav-list{
+	float:right;
+	height: 100%;
+	font-family:sans-serif;
+	
+}
+
+.name-logo h1{
+	float:left;
+	margin:20px 0px 10px 0px;
+	color:white;
+	font-size:50px
+
+}
+.name-logo h6{
+	position: relative;
+	display: inline-block;
+	top:-5px;
+	margin:0px;
+	color:#fff;	
+}
+
+
+nav{
+	height:30px;
+	padding-top:5px;
+	float:right;
+	margin-top:30px;
+
+}
+
+nav ul li{
+	margin:0px;
+	float:left;
+	height:30px;
+	width:120px;
+	list-style: none;
+	line-height: 30px;
+	text-align: center;
+}
+
+nav ul li a{
+	text-decoration: none;
+	background-color:#3A5F0B;
+	color:#fff;
+	display:block;
+	font-size:20px;
+}
+
+nav ul li a:hover{
+	background-color:#fff;
+	color:#3A5F0B;
+}
+
+nav ul li ul li{
+	margin:0px;
+	padding:0px;
+	position:static;
+	color:black;
+	display:none;
+}
+
+nav ul li ul{
+	background-color:#fff;
+	width:150px;
+
+}
+#login-wrapper{
+	position:relative;
+	background-color:#fff;
+	right:50px;
+	width:200px;
+	height:180px;
+	z-index:1500;
+	border:1px solid black;
+}
+
+#login-wrapper input{
+	width:90%;
+
+}
+
+#login-wrapper form a{
+	background-color:#fff;
+	color:black;
+	text-decoration:underline;
+	width:100%;
+
+}
+#login-wrapper form p{
+	margin-top: 10px;
+}
+#login-button{
+	float:left;
+	margin-left:8px;
+	margin-top:5px;
+	width:80px;
+	height:27px;
+	background-color:#3A5F0B;
+	color:#fff;
+}
+#login-wrapper form a{
+	font-size: 100%;
+	line-height: 15px;
+	margin-top: 10px;
+	color:#3A5F0B;
+}
+nav ul li:hover ul li{
+	display:block;
+	box-shadow: 2px 2px 2px black;
+}
+
+
+/*-------REGESTRATION FORM----------------------*/
+
+#form-wrapper{
+ 	text-align: center;
+
+}
+
+#main-div{
+	width:80%;
+}
+
+.text-form{
+
+	margin-left:0px;
+	text-align: center;
+	padding:10px 10px;
+	line-height: 40px;
+	font-size: 40px;
+
+
+}
+
+.text-input{
+
+	margin:10px 10px;
+	width:50%;
+	padding:10px 10px;
+	line-height: 20px;
+	font-size:16px;
+}
+
+.text-input1{
+
+	margin:10px 20px 10px 120px;
+	width:30%;
+	padding:10px 10px;
+	line-height: 20px;
+	font-size:16px;
+	
+}
+
+#dur-para{
+	font-size: 20px;
+	display: inline;
+
+}
+
+.selector-input{
+	width:52.5%;
+	margin:10px 10px;
+	padding:10px 10px;
+	line-height: 20px;
+	font-size:16px;
+	text-align:center;
+
+}
+.button-input{
+	width:52.5%;
+	margin:10px 10px;
+	padding:10px 10px;
+	line-height: 20px;
+	background-color:#3A5F0B;
+	color:#fff; 
+	font-size: 25px;
+
+}
+
+.tarea1{
+	height:300px;
+	width:52.5%;
+}
+
+.tarea2{
+	min-height:180px;
+	width:52.5%;
+}
+
+#forced-width{
+	width:52.5%;
+}
+
+.tab{
+	width:53%;
+	text-align: left;
+	margin:20px auto;
+	border-collapse:collapse;
+}
+
+.tabdata1{
+	border:1px solid black;
+	line-height:20px;
+	font-size:18px;
+	padding :10px;
+	width:65%;
+}
+.tabdata2{
+	border:1px solid black;
+	line-height:20px;
+	font-size:18px;
+	padding :10px;
+}
+.selectortabdata{
+	border:none;
+	width:100%;
+	line-height:20px;
+	outline:none;
+	text-align:center;
+	font-size:16px;
+}
+
+/*---------------------------------FOOTER-----------------------------------*/  
+	
+footer{
+	clear:both;
+	width:100%;
+	background-color:#3A5F0B;
+	height:100px;
+	box-shadow: 0px -5px 20px black;
+	margin-top:50px;
+}
+footer h2{
+	margin-top:10px;
+	color:#fff;
+	text-align:center;
+}
+
+/*-------------------------------------------------------------------*/
+
+/*------------------------ Toggle Switch CSS----------------------------- */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* ------------------------toggle switch CSS Ends ----------------------------*/
