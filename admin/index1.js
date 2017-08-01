@@ -56,6 +56,17 @@ app.controller("ctrl1",function(){
         this.submit_data = function () {
 
 
+            var nicInstance = nicEditors.findEditor('intro');
+            this.university.intro = nicInstance.getContent();
+
+
+            var nicInstance = nicEditors.findEditor('eligibility');
+            this.university.eligibility = nicInstance.getContent();
+
+
+            var nicInstance = nicEditors.findEditor('other_fee');
+            this.university.other_fee = nicInstance.getContent();
+
 
             console.log(this.university);
         }
